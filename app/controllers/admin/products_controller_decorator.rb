@@ -2,7 +2,10 @@
 Admin::ProductsController.class_eval do
   require 'nokogiri'
   require 'open-uri'
-  
+
+  update.before :modify_products_fields
+  create.before :modify_products_fields
+
   def import_from_yandex_market
     if params[:model_id].to_i > 0
       market_url = "http://market.yandex.ru/model.xml?modelid=#{params[:model_id]}"
@@ -52,9 +55,19 @@ Admin::ProductsController.class_eval do
     end
     redirect_to admin_products_path
   end
-  
+
+  def modify_products_fields
+    parameters = params[object_name]
+
+    if parameters[:description] && ActionController::Base.helpers.strip_tags(parameters[:description]).gsub('&nbsp;', '').strip.empty?
+      parameters[:description] = nil
+    end
+
+    params[object_name] = parameters
+  end
+
   private
-  
+
   def download_remote_image(image_url)
     io = open(URI.parse(image_url))
     def io.original_filename; [base_uri.path.split('/').last, '.jpg'].join; end
