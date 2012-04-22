@@ -85,8 +85,7 @@ module Synergy
           Calculator::CashOnDelivery,
           Calculator::Juridical,
           Calculator::FlexiRate,
-          Calculator::PerItem,
-          Calculator::PriceBucket]
+          Calculator::PerItem]
     end
     
     initializer "spree.register.payment_methods" do |app|
