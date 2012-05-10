@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Spree::Core::Engine.routes.draw do
   # Add your extension routes here
   match "/admin/products/import_from_yandex_market" => "admin/products#import_from_yandex_market", :as => :import_from_yandex_market
   match "/admin/orders/:id/courier_instruction" => "admin/orders#courier_instruction", :as => :orders_courier_instruction

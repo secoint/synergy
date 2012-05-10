@@ -1,0 +1,69 @@
+<p>
+  <%= f.label :juridical_enabled %>:
+  <%= f.check_box :juridical_enabled %>
+</p>
+
+<%= f.field_container :recipient do %>
+  <%= f.label :recipient %>:<br />
+  <%= f.text_field :recipient, :size => 40 %>
+  <%= error_message_on :synergy_configuration, :recipient %>
+<% end %>
+
+<%= f.field_container :address do %>
+  <%= f.label :address %>:<br />
+  <%= f.text_field :address, :size => 40 %>
+  <%= error_message_on :synergy_configuration, :address %>
+<% end %>
+
+<%= f.field_container :inn do %>
+  <%= f.label :inn %>:<br />
+  <%= f.text_field :inn, :maxlength => 10 %>
+  <%= error_message_on :synergy_configuration, :inn %>
+<% end %>
+
+<%= f.field_container :kpp do %>
+  <%= f.label :kpp %>:<br />
+  <%= f.text_field :kpp, :maxlength => 9 %>
+  <%= error_message_on :synergy_configuration, :kpp %>
+<% end %>
+
+<%= f.field_container :bank do %>
+  <%= f.label :bank %>:<br />
+  <%= f.text_field :bank, :size => 40 %>
+  <%= error_message_on :synergy_configuration, :bank %>
+<% end %>
+
+<%= f.field_container :settlement_acc do %>
+  <%= f.label :settlement_acc %>:<br />
+  <%= f.text_field :settlement_acc, :maxlength => 20, :size => 25 %>
+  <%= error_message_on :synergy_configuration, :settlement_acc %>
+<% end %>
+
+<%= f.field_container :corr do %>
+  <%= f.label :corr %>:<br />
+  <%= f.text_field :corr, :maxlength => 20, :size => 25 %>
+  <%= error_message_on :synergy_configuration, :corr %>
+<% end %>
+
+<%= f.field_container :bik do %>
+  <%= f.label :bik %>:<br />
+  <%= f.text_field :bik, :maxlength => 9 %>
+  <%= error_message_on :synergy_configuration, :bik %>
+<% end %>
+
+<p>
+  <%= f.label :nds %>:<br />
+  <%= f.check_box :nds %>
+</p>
+
+<%= f.field_container :director do %>
+  <%= f.label :director %>:<br />
+  <%= f.text_field :director %>
+  <%= error_message_on :synergy_configuration, :director %>
+<% end %>
+
+<%= f.field_container :accountant do %>
+  <%= f.label :accountant %>:<br />
+  <%= f.text_field :accountant %>
+  <%= error_message_on :synergy_configuration, :accountant %>
+<% end %>

@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'synergy'
-  s.version     = '0.70.0.beta'
+  s.version     = '1.1.0'
   s.summary     = 'Russian e-commerce solution based on Spree'
   s.description = ''
   s.required_ruby_version = '>= 1.8.7'
@@ -11,21 +11,17 @@ Gem::Specification.new do |s|
   s.homepage          = 'https://github.com/secoint/synergy'
   s.rubyforge_project = 'synergy'
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.files        = Dir['LICENSE.txt', 'README.md', 'app/**/*', 'config/**/*', 'lib/**/*', 'db/**/*', 'vendor/**/*']
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency('synergy_russian', '0.2.8')
-  s.add_dependency('json', '>= 1.5')
-  s.add_dependency('nokogiri', '~> 1.5')
-  s.add_dependency('spree', '~> 0.70.0')
-  s.add_dependency('spree_static_content', '~> 0.70.0')
-  s.add_dependency('spree_editor', '~> 0.70.0')
+  s.add_dependency 'russian', '~> 0.6.0'
+  #s.add_dependency('json', '>= 1.5')
+  #s.add_dependency('nokogiri', '~> 1.5')
+  s.add_dependency 'spree', '~> 1.0'
+  #s.add_dependency('spree_static_content', '~> 0.70.0')
+  #s.add_dependency('spree_editor', '~> 1.0')
   #s.add_dependency('spree_robokassa', '~> 0.50.2')
-  s.add_dependency('synergy_mainpay', '~> 0.70.1')
-  s.add_dependency('spree_online_support', '~> 0.70.0')
-  s.add_dependency('spree_address_book', '~> 0.70.0')
-  s.add_dependency('spree_dynamic_sitemaps', '~> 0.50.1')
-  s.add_dependency('ru_propisju', '~> 1.1.0')
+  #s.add_dependency('synergy_mainpay', '~> 0.70.1')
+  s.add_dependency 'ru_propisju'
 end

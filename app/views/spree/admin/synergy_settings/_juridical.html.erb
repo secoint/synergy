@@ -1,0 +1,50 @@
+<table>
+  <tr>
+    <td><%= Spree::Synergy::Config.preference_description(:juridical_enabled) %>:</td>
+    <td><%= Spree::Synergy::Config['juridical_enabled'] ? t("yes") : t("no") %></td>
+  </tr>
+  <tr>
+    <td><%= Spree::Synergy::Config.preference_description(:recipient) %>:</td>
+    <td><%= Spree::Synergy::Config['recipient'] %></td>
+  </tr>
+  <tr>
+    <td><%= Spree::Synergy::Config.preference_description(:address) %>:</td>
+    <td><%= Spree::Synergy::Config['address'] %></td>
+  </tr>
+  <tr>
+    <td><%= Spree::Synergy::Config.preference_description(:inn) %>:</td>
+    <td><%= Spree::Synergy::Config['inn'] %></td>
+  </tr>
+  <tr>
+    <td><%= Spree::Synergy::Config.preference_description(:kpp) %>:</td>
+    <td><%= Spree::Synergy::Config['kpp'] %></td>
+  </tr>
+  <tr>
+    <td><%= Spree::Synergy::Config.preference_description(:bank) %>:</td>
+    <td><%= Spree::Synergy::Config['bank'] %></td>
+  </tr>
+  <tr>
+    <td><%= Spree::Synergy::Config.preference_description(:settlement_acc) %>:</td>
+    <td><%= Spree::Synergy::Config['settlement_acc'] %></td>
+  </tr>
+  <tr>
+    <td><%= Spree::Synergy::Config.preference_description(:corr) %>:</td>
+    <td><%= Spree::Synergy::Config['corr'] %></td>
+  </tr>
+  <tr>
+    <td><%= Spree::Synergy::Config.preference_description(:bik) %>:</td>
+    <td><%= Spree::Synergy::Config['bik'] %></td>
+  </tr>
+  <tr>
+    <td><%= Spree::Synergy::Config.preference_description(:nds) %>:</td>
+    <td><%= Spree::Synergy::Config['nds'] ? t(:yes) : t(:no) %></td>
+  </tr>
+  <tr>
+    <td><%= Spree::Synergy::Config.preference_description(:director) %>:</td>
+    <td><%= Spree::Synergy::Config['director'] %></td>
+  </tr>
+  <tr>
+    <td><%= Spree::Synergy::Config.preference_description(:accountant) %>:</td>
+    <td><%= Spree::Synergy::Config['accountant'] %></td>
+  </tr>
+</table>

@@ -1,5 +1,5 @@
 Deface::Override.new(
-  :virtual_path => "admin/orders/show",
+  :virtual_path => "spree/admin/orders/show",
   :name => "synergy_admin_order_show_buttons",
   :insert_before => "[data-hook='admin_order_show_buttons'], #admin_order_show_buttons[data-hook]",
   :text => "
@@ -8,9 +8,9 @@ Deface::Override.new(
   :disabled => false)
 
 Deface::Override.new(
-  :virtual_path => "admin/configurations/index",
+  :virtual_path => "spree/admin/configurations/index",
   :name => "synergy_admin_configurations_menu",
-  :insert_bottom => "[data-hook='admin_configurations_menu'], #admin_configurations_menu[data-hook]",
+  :insert_before => "[data-hook='admin_configurations_menu'], #admin_configurations_menu[data-hook]",
   :text => "<tr>
   <td><%= link_to t(\"synergy_settings\"), admin_synergy_settings_path %></td>
   <td><%= t(\"synergy_settings_desc\") %></td>
@@ -18,24 +18,29 @@ Deface::Override.new(
   :disabled => false)
 
 Deface::Override.new(
-  :virtual_path => "admin/shared/_configuration_menu",
+  :virtual_path => "spree/admin/shared/_configuration_menu",
   :name => "synergy_admin_configurations_sidebar_menu",
   :insert_bottom => "[data-hook='admin_configurations_sidebar_menu'], #admin_configurations_sidebar_menu[data-hook]",
   :text => "<li<%== ' class=\"active\"' if controller.controller_name == 'synergy_settings' %>><%= link_to t(\"synergy_settings\"), admin_synergy_settings_path %></li>",
   :disabled => false)
 
 Deface::Override.new(
-  :virtual_path => "admin/shared/_order_tabs",
+  :virtual_path => "spree/admin/shared/_order_tabs",
   :name => "synergy_admin_order_tabs",
   :insert_bottom => "[data-hook='admin_order_tabs'], #admin_order_tabs[data-hook]",
-  :partial => "admin/orders/juridical_tabs",
+  :partial => "spree/admin/orders/juridical_tabs",
   :disabled => false)
 
 Deface::Override.new(
-  :virtual_path => "users/show",
+  :virtual_path => "spree/users/show",
   :name => "synergy_account_summary",
-  :insert_bottom => "[data-hook='account_summary'], #account_summary[data-hook]",
-  :partial => "users/status",
-  :disabled => false)
+  :insert_bottom => "[data-hook='account_summary'] #user-info",
+  :partial => "spree/users/status",
+  :disabled => false) if Spree::Synergy::Config[:juridical_enabled]
 
-
+Deface::Override.new(
+  :virtual_path => "spree/shared/_user_form",
+  :name => "synergy_account_edit",
+  :insert_bottom => "#password-credentials",
+  :partial => "spree/users/status_form",
+  :disabled => false) if Spree::Synergy::Config[:juridical_enabled]

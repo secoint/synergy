@@ -1,0 +1,43 @@
+<p>
+  <%= f.check_box :juridical, :onclick => "$('#user_juridical_data').toggle();" %>
+  <%= f.label :juridical %>
+</p>
+
+<div id="user_juridical_data" style="display: <%= @user.juridical? ? "block" : "none" %>;">
+  <p>
+    <%= f.label :recipient %><br />
+    <%= f.text_field :recipient %>
+  </p>
+  <p>
+    <%= f.label :juridical_address %><br />
+    <%= f.text_field :juridical_address %>
+  </p>
+  <p>
+    <%= f.label :inn %><br />
+    <%= f.text_field :inn, :maxlength => 10 %>
+  </p>
+  <p>
+    <%= f.label :kpp %><br />
+    <%= f.text_field :kpp, :maxlength => 9 %>
+  </p>
+  <p>
+    <%= f.label :recipient_bank %><br />
+    <%= f.text_field :recipient_bank %>
+  </p>
+  <p>
+    <%= f.label :settlement_acc %><br />
+    <%= f.text_field :settlement_acc, :maxlength => 20 %>
+  </p>
+  <p>
+    <%= f.label :corr %><br />
+    <%= f.text_field :corr, :maxlength => 20 %>
+  </p>
+  <p>
+    <%= f.label :bik %><br />
+    <%= f.text_field :bik, :maxlength => 9 %>
+  </p>
+  <p>
+    <%= f.check_box :nds %>
+    <%= f.label :nds %>
+  </p>
+</div>

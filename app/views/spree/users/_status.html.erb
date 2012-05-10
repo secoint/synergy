@@ -1,0 +1,2 @@
+<dt><%= t(:account_status) %></dt>
+<dd><%= current_user.juridical? ? t(:juridical) : t(:physical) %> (<%= link_to t(:edit), spree.edit_account_path %>)</dd>

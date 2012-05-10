@@ -14,16 +14,16 @@ ru:
 
   activerecord:
     attributes:
-      address:
+      spree/address:
         secondname: "Отчество"
-      promotion:
+      spree/promotion:
         name: "Название"
         description: "Описание"
         code: "Код"
         usage_limit: "Ограничения"
         starts_at: "Начало"
         expires_at: "Истекает"
-      user:
+      spree/user:
         juridical: "Юридическое лицо"
         recipient: "Наименование организации"
         juridical_address: "Адрес организации"
@@ -33,10 +33,8 @@ ru:
         settlement_acc: "Расч. сч."
         corr: "Корр. сч."
         bik: "БИК"
-        nds: "Настройки НДС"
-        w_nds: "НДС 18%"
-        wo_nds: "без НДС"
-      synergy_configuration:
+        nds: "Плательщик НДС"
+      spree/synergy_configuration:
         preferred_juridical_enabled: "Принимать заказы от юридических лиц"
         preferred_recipient: "Наименование организации"
         preferred_address: "Адрес организации"
@@ -162,8 +160,6 @@ ru:
   juridical_settings: "Настройки юридического лица"
   juridical_description: "Автоматизация работы с юридическими лицами"
 
-  w_nds: "НДС 18%"
-  wo_nds: "без НДС"
   juridical_invoice: "Счет для юридических лиц"
   print_juridical_invoice: "Распечатать счет на оплату"
   juridical_info: "Юридическая информация"
