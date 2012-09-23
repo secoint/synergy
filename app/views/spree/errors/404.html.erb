@@ -12,7 +12,5 @@
 <p>Если вы уверены, что адрес правильный, попробуйте начать поиск информации с <%= link_to 'главной страницы сайта', '/' %></p>
 
 <% content_for :sidebar do %>
-  <%= hook :taxon_sidebar_navigation do %>
-    <%= render :partial => "spree/shared/taxonomies" %>
-  <% end %>
+  <%= render :partial => "spree/shared/taxonomies" %>
 <% end %>
